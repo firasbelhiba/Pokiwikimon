@@ -1,0 +1,189 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background-image {
+  background: url("https://images.unsplash.com/photo-1628968434441-d9c1c66dcde7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway:wght@600&display=swap");
+:root {
+  --size: 50;
+  --unit: calc((var(--size) / 100) * 1vmin);
+  font-family: "Raleway", sans-serif;
+}
+:root * {
+  margin: 0;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #2dfdd4 52%, #22c1c3 82%, #3c9acf 100%);
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  visibility: hidden;
+  height: calc(170 * var(--unit));
+  width: calc(120 * var(--unit));
+  background: white;
+  border-radius: 8%/6%;
+  border: calc(4 * var(--unit)) solid whitesmoke;
+  box-shadow: 1em 1em 2em black;
+  transform: rotate(8deg);
+  transition: box-shadow 1s ease;
+}
+#card h2 {
+  color: #3a3a3f;
+  letter-spacing: calc(2 * var(--unit));
+  font-size: calc(10 * var(--unit));
+  margin: 8% 0 2% 6%;
+}
+#card h3 {
+  font-size: calc(9 * var(--unit));
+  text-align: right;
+  margin-right: 5%;
+}
+#card p {
+  color: #3a3a3f;
+  letter-spacing: calc(1 * var(--unit));
+  font-size: calc(5 * var(--unit));
+  margin: 0% 8%;
+}
+#card #inner {
+  color: #3a3a3f;
+  letter-spacing: calc(0.5 * var(--unit));
+  font-size: calc(4 * var(--unit));
+  margin: 0% 8%;
+}
+#card .mediaContainer {
+  height: 60%;
+  background: linear-gradient(0deg, whitesmoke 1%, transparent);
+  clip-path: polygon(0% 7%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+#pokeball-container {
+  position: absolute;
+}
+#pokeball-container svg {
+  width: calc(80 * var(--unit));
+  height: calc(80 * var(--unit));
+  animation: wobble 3s infinite both;
+}
+
+.title {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(10 * var(--unit));
+}
+
+@-webkit-keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pokeball {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sacha {
+  display: none;
+}
