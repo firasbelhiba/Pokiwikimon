@@ -15,7 +15,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const getKey = (pageIndex, previousPageData) => {
   if (previousPageData && !previousPageData.length) return null
-  return `https://pokewikimon-1ng3idxaz-firasbelhiba.vercel.app/api/pokewikimon?page=${pageIndex + 1}`
+  return `http://localhost:3000/api/pokewikimon?page=${pageIndex + 1}`
 }
 
 export default function Home() {
