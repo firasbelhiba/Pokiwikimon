@@ -12,13 +12,13 @@ router.get('/pokewikimon', async (req, res) => {
   const page = req.query.page
   const default_limit = 12
 
-  const startIndex = (page - 1) * default_limit
-  const endIndex = page * default_limit
-  const skip = req.query.skip ? Number(req.query.skip) : 0
-  try {
-    const pokemons = await Pokemon.find()
+  // I think the skip should fix the problem , now I will get only what I need without slicing the array
+  let skip = page * default_limit
 
-    res.json(pokemons.slice(startIndex, endIndex))
+  try {
+    const pokemons = await Pokemon.find().skip(skip).limit(default_limit)
+
+    res.json(pokemons)
   } catch (error) {
     console.error(error.message)
     res.status(500).send('Server error')

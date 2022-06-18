@@ -16,6 +16,10 @@ a {
   padding: 0;
 }
 
+.scrollable {
+  overflow-y: scroll;
+}
+
 .background-image {
   background: url("https://images.unsplash.com/photo-1628968434441-d9c1c66dcde7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
     no-repeat center center fixed;
@@ -186,4 +190,8 @@ a {
 
 .sacha {
   display: none;
+}
+
+.styled-text {
+  font-size: 12px;
 }

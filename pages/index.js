@@ -1,5 +1,6 @@
 //Nextjs
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 // Components
 import Card from '../components/card'
@@ -15,7 +16,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const getKey = (pageIndex, previousPageData) => {
   if (previousPageData && !previousPageData.length) return null
-  return `http://localhost:3000/api/pokewikimon?page=${pageIndex + 1}`
+  return `http://localhost:3000/api/pokewikimon?page=${pageIndex}`
 }
 
 export default function Home() {
@@ -25,11 +26,23 @@ export default function Home() {
   )
 
   const loadMore = () => {
+    if (isLoadingMore) {
+      return
+    }
     setSize(size + 1)
   }
 
   if (isLoading) {
     return <Loader />
+  }
+
+  document.onscroll = async function () {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
+    ) {
+      loadMore()
+    }
   }
 
   return (
@@ -40,7 +53,7 @@ export default function Home() {
             return pokemonArray.map((pokemon) => (
               <>
                 <div className="col-md-3">
-                  <Card key={pokemon._id}  {...pokemon} />
+                  <Card key={pokemon._id} {...pokemon} />
                 </div>
               </>
             ))
@@ -73,12 +86,6 @@ export default function Home() {
               />
             </div>
           )}
-          <Image
-            src="https://res.cloudinary.com/habibii/image/upload/v1655504374/Sans_titre-1_drzmlv.jpg"
-            alt="pokemon-button"
-            width={300}
-            height={300}
-          />
           <div></div>
         </div>
       </div>
