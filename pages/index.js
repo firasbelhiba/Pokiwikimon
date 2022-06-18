@@ -66,7 +66,7 @@ export default function Home() {
                   cursor: 'pointer',
                 }}
                 className="pokeball"
-                src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png"
+                src="/pokeball.png"
                 alt="pokemon-button"
                 width={100}
                 height={100}
@@ -79,7 +79,7 @@ export default function Home() {
                 style={{
                   cursor: 'pointer',
                 }}
-                src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png"
+                src="/pokeball.png"
                 alt="pokemon-button"
                 width={100}
                 height={100}
